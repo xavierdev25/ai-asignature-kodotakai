@@ -2,10 +2,8 @@ from sentence_transformers import SentenceTransformer
 import json
 import numpy as np
 
-# Cargar el modelo multilenguaje
 model = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2')
 
-# Cargar los episodios guardados
 with open("simpsons_episodes.json", "r", encoding="utf-8") as f:
     episodes = json.load(f)
 
@@ -23,7 +21,6 @@ for ep in episodes:
         "embedding": embedding
     })
 
-# Guardar los embeddings
 with open("simpsons_embeddings.json", "w", encoding="utf-8") as f:
     json.dump(embeddings_data, f, ensure_ascii=False, indent=2)
 

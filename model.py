@@ -4,7 +4,6 @@ import json
 OLLAMA_URL = "http://localhost:11434/api/embeddings"
 MODEL = "mxbai-embed-large"
 
-# Cargar episodios
 with open("simpsons_episodes.json", "r", encoding="utf-8") as f:
     episodes = json.load(f)
 
@@ -28,4 +27,4 @@ for ep in episodes:
 with open("simpsons_embeddings_ollama.json", "w", encoding="utf-8") as f:
     json.dump(embeddings_data, f, ensure_ascii=False, indent=2)
 
-print("✅ Embeddings creados con Ollama y guardados en simpsons_embeddings_ollama.json")
+print("Embeddings creados con Ollama y guardados en simpsons_embeddings_ollama.json")
